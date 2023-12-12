@@ -28,7 +28,15 @@ Warning: This project is not intended for production use. Please adapt it before
 
 ## Configuration
 
-In the backend directory (.env), adapt the following variables according to your needs:
+In the backend directory:
+
+1. Copy the `.env.example` file
+
+```bash
+cp .env.example .env
+```
+
+2. Adapt the following variables according to your needs:
 
 ```env
 DB_CONNECTION=pgsql
@@ -43,7 +51,7 @@ DB_PASSWORD=laravel
 
 In the root directory (docker-compose.yml):
 
-First, execute the following command to build the images:
+1. Execute the following command to build the images:
 
 ```bash
 docker compose up -d --build
@@ -51,7 +59,13 @@ docker compose up -d --build
 
 This command will build the images and start the containers in the background.
 
-Finally, execute the following command to migrate the database:
+2. Execute the following command to add a secret key to the Laravel project:
+
+```bash
+docker compose exec laravel php artisan key:generate
+```
+
+3. Execute the following command to migrate the database:
 
 ```bash
 docker compose exec laravel php artisan migrate
@@ -95,7 +109,7 @@ When the containers are running, you can access the following URLs:
 - [Next.js](http://localhost:3000)
 - [pgAdmin](http://localhost:5050)
 
-Other useful commands:
+## Other useful commands:
 
 To install the dependencies of the Laravel project, execute the following command:
 
