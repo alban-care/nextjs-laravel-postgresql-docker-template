@@ -32,4 +32,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY . .
 
+RUN composer install --no-dev --no-interaction --no-progress --optimize-autoloader --no-suggest
+
 CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
