@@ -40,7 +40,7 @@ cp .env.example .env
 
 ```env
 DB_CONNECTION=pgsql
-DB_HOST=db
+DB_HOST=postgres
 DB_PORT=5432
 DB_DATABASE=laravel
 DB_USERNAME=laravel
